@@ -119,15 +119,3 @@ curl -X PATCH http://localhost:3000/api/products/<id> \
 # Hapus produk
 curl -X DELETE http://localhost:3000/api/products/<id>
 ```
-
-## Cara Menambah Resource Baru
-
-Ikuti pola yang sama seperti `product`:
-1. Buat model baru di `src/models/`
-2. Buat controller baru di `src/controllers/`
-3. Buat route baru di `src/routes/`
-4. Daftarkan route di `src/app.js` (`app.use('/api/nama-resource', namaResourceRoutes)`)
-
-## Upgrade ke Database Sungguhan
-
-Struktur ini sengaja dipisah per layer (model/controller/route) sehingga kalau nanti mau pindah ke database beneran (MongoDB/PostgreSQL/dsb), yang perlu diganti cukup isi file di `src/models/product.model.js` — controller dan route tidak perlu diubah.
